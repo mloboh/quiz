@@ -27,7 +27,9 @@ sequelize.sync().success(function() {
 	//success(..) ejecuta el manejador una vez creada la tabla
 	Quiz.count().success(function (count) {
 		if (count === 0) {
-			Quiz.create({ pregunta : 'Capital de Italia', respuesta: 'Roma'}).success(function(){console.log('Base de datos inicilizada.')});
+			Quiz.create({ pregunta : 'Capital de Italia', respuesta: 'Roma'});
+			Quiz.create({pregunta: '¿En que año descubrió Colón América?', respuesta: '1492'})
+				.success(function(){console.log('Base de datos inicilizada.')});
 		}
 	});
 });
